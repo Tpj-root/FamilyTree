@@ -1,0 +1,17 @@
+digraph FamilyTree {
+    // Graph settings
+    graph [splines=true, rankdir=TB, bgcolor=transparent];
+
+    // Background image
+    node [shape=rectangle, style=filled, fillcolor=transparent];
+    graph [imagescale=true, labelloc="t"];
+
+    // Nodes and connections
+    Parents1 [label="Parent 1"];
+    Parents2 [label="Parent 2"];
+    Grandchild [label="Child"];
+
+    Parents1 -> Grandchild;
+    Parents2 -> Grandchild;
+}
+
