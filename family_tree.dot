@@ -1,0 +1,104 @@
+//dot -Tpng family_tree.dot -o family_tree.png
+digraph FamilyTree {
+    // Graph settings
+    // Add bg colur
+    graph [splines=true, rankdir=TB, bgcolor=gray];
+    node [shape=ellipse];
+
+
+    // DADFamily members 
+    DGrandpa [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><IMG SRC="Dgrandpa.png" SCALE="TRUE"/></TD></TR>
+        <TR><TD>RR</TD></TR>
+        <TR><TD>DOB: 1920-01-01</TD></TR>
+        <TR><TD>grandfather</TD></TR>
+    </TABLE>>];
+
+    DGrandma [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><IMG SRC="Dgrandma.png" SCALE="TRUE"/></TD></TR>
+        <TR><TD>TTT</TD></TR>
+        <TR><TD>DOB: 1920-01-01</TD></TR>
+        <TR><TD> grandmother </TD></TR>
+    </TABLE>>];
+
+    // Family members with images, names, dates of birth, and gender
+    Grandpa [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><IMG SRC="grandpa.png" SCALE="TRUE"/></TD></TR>
+        <TR><TD>PP</TD></TR>
+        <TR><TD>DOB: 1920-01-01</TD></TR>
+        <TR><TD>grandfather</TD></TR>
+    </TABLE>>];
+
+    Grandma [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><IMG SRC="grandma.png" SCALE="TRUE"/></TD></TR>
+        <TR><TD>VVV</TD></TR>
+        <TR><TD>DOB: 1920-01-01</TD></TR>
+        <TR><TD> grandmother </TD></TR>
+    </TABLE>>];
+
+    Parents1 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><IMG SRC="parents1.png" SCALE="TRUE"/></TD></TR>
+        <TR><TD>Dad: BBB</TD></TR>
+        <TR><TD>DOB: 1920-01-01</TD></TR>
+        <TR><TD>Male</TD></TR>
+    </TABLE>>];
+
+    Parents2 [shape=ellipse, style=filled, fillcolor=yellow, label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" BGCOLOR="yellow">
+        <TR><TD><IMG SRC="parents2.png" SCALE="TRUE"/></TD></TR>
+        <TR><TD>Mom: SSS</TD></TR>
+        <TR><TD>DOB: 1920-01-01</TD></TR>
+        <TR><TD>Female</TD></TR>
+    </TABLE>>];
+
+
+    Child1 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><IMG SRC="child1.png" SCALE="TRUE"/></TD></TR>
+        <TR><TD>ZZ</TD></TR>
+        <TR><TD>1920-01-01</TD></TR>
+        <TR><TD>Male</TD></TR>
+    </TABLE>>];
+
+    Child2 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><IMG SRC="child2.png" SCALE="TRUE"/></TD></TR>
+        <TR><TD>YY</TD></TR>
+        <TR><TD>1920-01-01</TD></TR>
+        <TR><TD>male</TD></TR>
+    </TABLE>>];
+    
+    Child3 [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><IMG SRC="child3.png" SCALE="TRUE"/></TD></TR>
+        <TR><TD>XX</TD></TR>
+        <TR><TD>1920-01-01</TD></TR>
+        <TR><TD>Female</TD></TR>
+    </TABLE>>];
+
+    // Intermediate junction node
+    Junction1 [label="", width=0.1, height=0.1, shape=point];
+    Junction2 [label="", width=0.1, height=0.1, shape=point];
+    Junction3 [label="", width=0.1, height=0.1, shape=point];
+
+
+    //Grandpa -> Parents2 [label="Son"];
+    DGrandpa -> Junction3;
+    DGrandma -> Junction3;
+    
+   Junction3 -> Parents1 [label="Son"] [color=red];
+
+    // Connections with additional info between the arrows
+    //Grandpa -> Parents2 [label="Son"];
+    Grandpa -> Junction2;
+    Grandma -> Junction2;
+
+    Junction2 -> Parents2 [label="Daughter"];
+
+    Parents1 -> Junction1;
+    Parents2 -> Junction1;
+
+    Junction1 -> Child1 [label="Son"];
+    Junction1 -> Child2 [label="Son"];
+    Junction1 -> Child3 [label="Daughter"];
+
+    // Horizontal alignment for Parents1 and Parents2
+    {rank=same; Parents1; Parents2;}
+}
+
