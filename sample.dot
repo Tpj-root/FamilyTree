@@ -1,0 +1,77 @@
+// pyFamilyTree Graph
+graph {
+	graph [labelloc=b splines=ortho]
+	node [shape=box]
+	malenia [label="Malenia
+Blade of Miquella" color=red]
+	"marika-x-radagon" [label="" height=0.1 shape=diamond width=0.1]
+	{
+		rank=same
+		radagon [label="Radagon
+of the Golden Order" color=blue]
+		marika [label="Marika
+the Eternal" color=red]
+		marika -- "marika-x-radagon"
+		"marika-x-radagon" -- radagon
+	}
+	"c-marika-x-radagon" [shape=point size=0.1]
+	"marika-x-radagon" -- "c-marika-x-radagon"
+	"c-marika-x-radagon" -- malenia
+	rennala [label="Rennala
+Queen of the Full Moon" color=red]
+	ranni [label="Ranni
+the Witch" color=red]
+	"rennala-x-radagon" [label="" height=0.1 shape=diamond width=0.1]
+	{
+		rank=same
+		radagon [label="Radagon
+of the Golden Order" color=blue]
+		rennala [label="Rennala
+Queen of the Full Moon" color=red]
+		rennala -- "rennala-x-radagon"
+		"rennala-x-radagon" -- radagon
+	}
+	"c-rennala-x-radagon" [shape=point size=0.1]
+	"rennala-x-radagon" -- "c-rennala-x-radagon"
+	"c-rennala-x-radagon" -- ranni
+	golden_lineage [label="Golden Lineage" color=gray]
+	"godfrey-x-marika" [label="" height=0.1 shape=diamond width=0.1]
+	{
+		rank=same
+		marika [label="Marika
+the Eternal" color=red]
+		godfrey [label="Godfrey
+First Elden Lord" color=blue]
+		godfrey -- "godfrey-x-marika"
+		"godfrey-x-marika" -- marika
+	}
+	"c-godfrey-x-marika" [shape=point size=0.1]
+	"godfrey-x-marika" -- "c-godfrey-x-marika"
+	"c-godfrey-x-marika" -- golden_lineage
+	radahn [label="Radahn
+Conqueror of the Stars" color=blue]
+	"c-rennala-x-radagon" -- radahn
+	rykard [label="Rykard
+the Blasphemous" color=blue]
+	"c-rennala-x-radagon" -- rykard
+	godefroy [label="Godefroy
+the Grafted" color=blue]
+	golden_lineage [label="Golden Lineage" color=gray]
+	golden_lineage -- godefroy
+	godfrey [label="Godfrey
+First Elden Lord" color=blue]
+	radagon [label="Radagon
+of the Golden Order" color=blue]
+	miquella [label="Miquella
+the Kind" color=blue]
+	"c-marika-x-radagon" -- miquella
+	marika [label="Marika
+the Eternal" color=red]
+	godwyn [label="Godwyn
+the Golden" color=blue]
+	"c-godfrey-x-marika" -- godwyn
+	godrick [label="Godrick
+the Grafted" color=blue]
+	golden_lineage [label="Golden Lineage" color=gray]
+	golden_lineage -- godrick
+}
