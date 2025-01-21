@@ -39,3 +39,15 @@ dot -Tpng family_tree.dot -o family_tree.png
 
 
 ![](family_tree1.png)
+
+
+
+
+
+
+# extra
+
+https://github.com/boblyx/pyFamilyTree
+
+
+
