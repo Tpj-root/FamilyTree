@@ -50,4 +50,7 @@ dot -Tpng family_tree.dot -o family_tree.png
 https://github.com/boblyx/pyFamilyTree
 
 
+https://github.com/nicolaskruchten/genealogy
+
+
 
